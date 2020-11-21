@@ -31,8 +31,8 @@ def getEnrichedLogger(name: str, fPath: str, maxBytes: int, backupCount: int, ex
     fileHandler.setFormatter(streamFormatter)
     logger.addHandler(streamHandler)
     logger.addHandler(fileHandler)
-    logger = logging.LoggerAdapter(logger, extra)
-    return logger
+    loggerAdapter = logging.LoggerAdapter(logger, extra)
+    return loggerAdapter
 
 
 logger = getEnrichedLogger(

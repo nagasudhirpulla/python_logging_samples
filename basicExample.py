@@ -23,8 +23,8 @@ def getEnrichedLogger(name: str, extra: dict) -> LoggerAdapter:
     streamFormatter = logging.Formatter(json.dumps(fullDict))
     streamHandler.setFormatter(streamFormatter)
     logger.addHandler(streamHandler)
-    logger = logging.LoggerAdapter(logger, extra)
-    return logger
+    loggerAdapter = logging.LoggerAdapter(logger, extra)
+    return loggerAdapter
 
 
 logger = getEnrichedLogger(name="test_app", extra={"app_name": "myTestApp"})

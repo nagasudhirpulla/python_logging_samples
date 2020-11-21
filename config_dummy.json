@@ -1,0 +1,4 @@
+{
+    "logstash_host": "1.1.1.1",
+    "logstash_port": 5959
+}
